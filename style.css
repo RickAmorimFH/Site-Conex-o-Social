@@ -1,0 +1,23 @@
+body {font-family: Arial, sans-serif;margin: 0;padding: 0;color: #333;}
+header {background: #004080;color: #fff;padding: 20px;text-align: center;}
+nav ul {list-style: none;padding: 0;display: flex;justify-content: center;gap: 15px;}
+nav a {color: #fff;text-decoration: none;}
+.hero {text-align: center;padding: 50px 20px;background: #f4f4f4;}
+.hero img {max-width: 100%;height: auto;}
+section {padding: 20px;}
+.sobre-container, .servicos-container {display: flex;gap: 20px;flex-wrap: wrap;}
+.card {border: 1px solid #ddd;padding: 10px;text-align: center;flex: 1;}
+footer {background: #004080;color: #fff;text-align: center;padding: 10px;}
+.faq-chat {max-width: 600px;margin: 0 auto;padding: 20px;background: #f9f9f9;border-radius: 10px;box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+.faq-chat h2 {text-align: center;color: #004080;margin-bottom: 20px;}
+.chat-container {display: flex;flex-direction: column;}
+.chat-message {display: flex;margin: 10px 0;}
+.chat-message.clara {justify-content: flex-start;}
+.chat-message.user {justify-content: flex-end;}
+.chat-message img {width: 40px;height: 40px;border-radius: 50%;margin-right: 10px;}
+.chat-message .message {background: #e1f0ff;color: #004080;padding: 10px 15px;border-radius: 15px;max-width: 80%;}
+.chat-message.user .message {background: #004080;color: #fff;border-radius: 15px 15px 0 15px;}
+.chat-options {display: flex;flex-direction: column;gap: 10px;}
+.chat-options button {padding: 10px 15px;background: #004080;color: #fff;border: none;border-radius: 10px;cursor: pointer;transition: background 0.3s;}
+.chat-options button:hover {background: #0066cc;}
+#chat-history {margin-top: 20px;}
