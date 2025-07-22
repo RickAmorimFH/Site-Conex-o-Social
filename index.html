@@ -7,119 +7,111 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Conexão Social</h1>
-            <p>Slogan impactante aqui</p>
-        </div>
-        <nav>
+    <!-- Header fixo com logo e menu -->
+    <header class="header">
+        <div class="logo animated-title">Conexão Social</div>
+        <nav class="menu">
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre Mim</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-
-                <div id="more-menu" style="display: none;">
-                    <li><a href="#contato">Onde Me Encontrar</a></li>
-                    <li><a href="#faq-chat">FAQ</a></li>
-                </div>
-
-                <li><a href="javascript:void(0);" onclick="toggleMenu()">Mais opções ▼</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#faq-chat">FAQ</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Página Inicial -->
-    <section id="inicio" class="hero">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <span>🏠 Home</span> &gt; <span>Início</span>
+    </div>
+
+    <!-- Imagem de destaque com fade -->
+    <section class="hero">
         <img src="img/banner.jpg" alt="Banner corporativo">
-        <h2>Conectando você ao sucesso</h2>
-        <p>Assessoria, Consultoria e Planejamento para transformar ideias em resultados.</p>
     </section>
 
-    <!-- Sobre Mim -->
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <div class="sobre-container">
-            <img src="img/avatar.jpg" alt="Foto de Graziella">
-            <div>
-                <h3>Graziella</h3>
-                <p><strong>Formação:</strong> Assistente Social do Município</p>
-                <p><strong>Experiência:</strong> 20 anos de experiência na área.</p>
-                <p><strong>Missão:</strong> Ajudar empresas e pessoas a alcançarem seus objetivos através de planejamento estratégico.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Página Inicial -->
+    <main>
+        <section id="inicio">
+            <h1 class="animated-title">Conexão Social</h1>
+            <p>Assessoria, Consultoria e Planejamento para transformar ideias em resultados.</p>
+        </section>
 
-    <!-- Serviços -->
-    <section id="servicos">
-        <h2>Serviços</h2>
-        <div class="servicos-container">
-            <div class="card">
-                <img src="img/service1.png" alt="Assessoria">
-                <h3>Assessoria</h3>
-                <p>Suporte completo para gestão eficiente.</p>
+        <!-- Sobre Mim -->
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <div class="sobre-container">
+                <img src="img/avatar.jpg" alt="Foto de Graziella">
+                <div>
+                    <h3>Graziella</h3>
+                    <p><strong>Formação:</strong> Assistente Social do Município</p>
+                    <p><strong>Experiência:</strong> 20 anos de experiência na área.</p>
+                    <p><strong>Missão:</strong> Ajudar empresas e pessoas a alcançarem seus objetivos através de planejamento estratégico.</p>
+                </div>
             </div>
-            <div class="card">
-                <img src="img/service2.png" alt="Consultoria">
-                <h3>Consultoria</h3>
-                <p>Orientação estratégica para seus projetos.</p>
-            </div>
-            <div class="card">
-                <img src="img/service3.png" alt="Planejamento">
-                <h3>Planejamento</h3>
-                <p>Desenvolvimento de planos personalizados.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Onde Me Encontrar -->
-    <section id="contato">
-        <h2>Onde Me Encontrar</h2>
-        <p><strong>Endereço:</strong> Água Fria de Goiás - Brasil</p>
-        
-        <!-- Mapa do Google -->
-        <div id="mapa" style="width:100%; height:300px; border:1px solid #ccc;">
-            <!-- O mapa será carregado aqui -->
-        </div>
-
-        <!-- Formulário de cálculo -->
-        <form id="calc-form" style="margin-top: 20px;">
-            <label for="endereco">Digite seu endereço para calcular a distância:</label>
-            <input type="text" id="endereco" placeholder="Ex: Brasília, DF" required>
-            <button type="button" onclick="calcularDistancia()">Calcular</button>
-        </form>
-        
-        <div id="resultado" style="margin-top: 10px; font-weight: bold;"></div>
-    </section>
-
-    <!-- FAQ com Clara -->
-    <section id="faq-chat" class="faq-chat">
-        <h2>Perguntas Frequentes</h2>
-        <div class="chat-container">
-            <div class="chat-message clara">
-                <img src="img/clara-avatar.png" alt="Clara">
-                <div class="message">Olá! Eu sou a Clara, posso te ajudar? Escolha uma pergunta abaixo:</div>
+        <!-- Serviços -->
+        <section id="servicos">
+            <h2>Serviços</h2>
+            <div class="servicos-container">
+                <div class="card">
+                    <img src="img/service1.png" alt="Assessoria">
+                    <h3>Assessoria</h3>
+                    <p>Suporte completo para gestão eficiente.</p>
+                </div>
+                <div class="card">
+                    <img src="img/service2.png" alt="Consultoria">
+                    <h3>Consultoria</h3>
+                    <p>Orientação estratégica para seus projetos.</p>
+                </div>
+                <div class="card">
+                    <img src="img/service3.png" alt="Planejamento">
+                    <h3>Planejamento</h3>
+                    <p>Desenvolvimento de planos personalizados.</p>
+                </div>
             </div>
-            <div class="chat-options">
-                <button onclick="responder(1)">Quais serviços vocês oferecem?</button>
-                <button onclick="responder(2)">Como agendo uma consulta?</button>
-                <button onclick="responder(3)">Qual o horário de atendimento?</button>
-                <button onclick="responder(4)">Vocês atendem fora da cidade?</button>
+        </section>
+
+        <!-- Onde Me Encontrar -->
+        <section id="contato">
+            <h2>Onde Me Encontrar</h2>
+            <p><strong>Endereço:</strong> Água Fria de Goiás - Brasil</p>
+            <div id="mapa" style="width:100%; height:300px; border:1px solid #ccc;"></div>
+            <form id="calc-form" style="margin-top: 20px;">
+                <label for="endereco">Digite seu endereço para calcular a distância:</label>
+                <input type="text" id="endereco" placeholder="Ex: Brasília, DF" required>
+                <button type="button" onclick="calcularDistancia()">Calcular</button>
+            </form>
+            <div id="resultado" style="margin-top: 10px; font-weight: bold;"></div>
+        </section>
+
+        <!-- FAQ com Clara -->
+        <section id="faq-chat" class="faq-chat">
+            <h2>Perguntas Frequentes</h2>
+            <div class="chat-container">
+                <div class="chat-message clara">
+                    <img src="img/clara-avatar.png" alt="Clara">
+                    <div class="message">Olá! Eu sou a Rick, posso te ajudar? Escolha uma pergunta abaixo:</div>
+                </div>
+                <div class="chat-options">
+                    <button onclick="responder(1)">Quais serviços vocês oferecem?</button>
+                    <button onclick="responder(2)">Como agendo uma consulta?</button>
+                    <button onclick="responder(3)">Qual o horário de atendimento?</button>
+                    <button onclick="responder(4)">Vocês atendem fora da cidade?</button>
+                </div>
+                <div id="chat-history"></div>
             </div>
-            <div id="chat-history"></div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Rodapé -->
     <footer>
-        <p>Contato: email@conexaosocial.com | (62) 99999-9999</p>
-        <p>Redes Sociais: @conexaosocial</p>
         <p>&copy; <span id="ano"></span> Conexão Social</p>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
-    <script src="maps.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
     </script>

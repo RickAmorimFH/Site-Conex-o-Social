@@ -1,5 +1,21 @@
 
-document.getElementById('ano').textContent = new Date().getFullYear();
+function initMap() {
+    const destino = { lat: -15.5508, lng: -47.8946 }; // Água Fria de Goiás
+    const map = new google.maps.Map(document.getElementById("mapa"), {
+        zoom: 12,
+        center: destino,
+    });
+    new google.maps.Marker({ position: destino, map: map });
+}
+
+function calcularDistancia() {
+    const endereco = document.getElementById('endereco').value;
+    if (endereco.trim() === "") {
+        alert("Digite um endereço para calcular a distância.");
+        return;
+    }
+    alert("Função de cálculo de distância real com API ainda precisa da sua chave API.");
+}
 
 function responder(opcao) {
     const chatHistory = document.getElementById('chat-history');
@@ -26,16 +42,4 @@ function responder(opcao) {
     }, 500);
 }
 
-
-function toggleMenu() {
-    const moreMenu = document.getElementById('more-menu');
-    const btn = event.target;
-
-    if (moreMenu.style.display === "none") {
-        moreMenu.style.display = "block";
-        btn.innerHTML = "Menos opções ▲";
-    } else {
-        moreMenu.style.display = "none";
-        btn.innerHTML = "Mais opções ▼";
-    }
-}
+document.getElementById('ano').textContent = new Date().getFullYear();
