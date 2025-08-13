@@ -1,120 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexão Social – Assessoria, Consultoria e Planejamento</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Conexão Social – Assessoria, Consultoria e Planejamento</title>
+  <meta name="description" content="Conexão Social: assessoria, consultoria e planejamento em Assistência Social para municípios e organizações." />
+  <meta property="og:title" content="Conexão Social – Assessoria, Consultoria e Planejamento" />
+  <meta property="og:description" content="Soluções práticas e personalizadas para a gestão do SUAS." />
+  <meta property="og:type" content="website" />
+  <link rel="preload" href="img/banner.jpg" as="image" imagesrcset="img/banner.jpg 1200w" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/service1.png" />
 </head>
 <body>
-    <!-- Header fixo com logo e menu -->
-    <header class="header">
-        <div class="logo animated-title">Conexão Social</div>
-        <nav class="menu">
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#faq-chat">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <span>🏠 Home</span> &gt; <span>Início</span>
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a class="logo" href="#inicio" aria-label="Ir para o início">
+        <span class="logo__mark">●</span>
+        <span class="logo__text">Conexão Social</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav id="menu" class="menu" role="navigation">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#onde-encontrar">Onde me encontrar</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--sm" href="#contato">Contato</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Imagem de destaque com fade -->
-    <section class="hero">
-        <img src="img/banner.jpg" alt="Banner corporativo">
+  <main id="inicio">
+    <section class="hero" aria-label="Apresentação">
+      <img class="hero__bg" src="img/banner-1200.jpg" srcset="img/banner-480.jpg 480w, img/banner-768.jpg 768w, img/banner-1200.jpg 1200w" sizes="100vw" alt="" loading="lazy" />
+      <div class="container hero__content">
+        <h1>Assessoria e Consultoria em Assistência Social</h1>
+        <p>Planejamento, capacitação e soluções para fortalecer a gestão do SUAS em municípios de pequeno porte.</p>
+        <div class="hero__ctas">
+          <a class="btn" href="#servicos">Conhecer serviços</a>
+          <a class="btn btn--ghost" href="#contato">Falar agora</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Página Inicial -->
-    <main>
-        <section id="inicio">
-            <h1 class="animated-title">Conexão Social</h1>
-            <p>Assessoria, Consultoria e Planejamento para transformar ideias em resultados.</p>
-        </section>
+    <section id="sobre" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Sobre mim</h2>
+          <p>Atuação prática na gestão da Assistência Social, com foco em resultados: melhoria de fluxos, capacitações objetivas e apoio técnico no CRAS, SCFV, PAIF e Cadastro Único.</p>
+          <ul class="checklist">
+            <li>Experiência com municípios de pequeno porte</li>
+            <li>Materiais práticos e aplicáveis no dia a dia</li>
+            <li>Acompanhamento próximo e transparente</li>
+          </ul>
+        </div>
+        <figure class="card card--glass">
+          <img src="img/avatar.jpg" alt="Foto da consultora" loading="lazy" />
+        </figure>
+      </div>
+    </section>
 
-        <!-- Sobre Mim -->
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <div class="sobre-container">
-                <img src="img/avatar.jpg" alt="Foto de Graziella">
-                <div>
-                    <h3>Graziella</h3>
-                    <p><strong>Formação:</strong> Serviço Social</p>
-                    <p><strong>Experiência:</strong> 20 anos de experiência, atuando como coordenadora, responsável por prestações de contas e apoio direto à gestão.</p>
-                    <p><strong>Missão:</strong> Ajudar empresas e pessoas a alcançarem seus objetivos através de planejamento estratégico.</p>
-                </div>
-            </div>
-        </section>
+    <section id="servicos" class="section section--alt">
+      <div class="container">
+        <h2>Serviços</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="img/service1.png" alt="" loading="lazy" />
+            <h3>Assessoria contínua</h3>
+            <p>Suporte técnico e estratégico para equipes do SUAS.</p>
+          </article>
+          <article class="card">
+            <img src="img/service2.png" alt="" loading="lazy" />
+            <h3>Capacitações</h3>
+            <p>Treinamentos práticos com exemplos reais de atendimento.</p>
+          </article>
+          <article class="card">
+            <img src="img/service3.png" alt="" loading="lazy" />
+            <h3>Documentos oficiais</h3>
+            <p>Ofícios, atas, resoluções e planos com linguagem clara e correta.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- Serviços -->
-        <section id="servicos">
-            <h2>Serviços</h2>
-            <div class="servicos-container">
-                <div class="card">
-                    <img src="img/service1.png" alt="Assessoria">
-                    <h3>Assessoria</h3>
-                    <p>Suporte completo para gestão eficiente.</p>
-                </div>
-                <div class="card">
-                    <img src="img/service2.png" alt="Consultoria">
-                    <h3>Consultoria</h3>
-                    <p>Orientação estratégica para seus projetos.</p>
-                </div>
-                <div class="card">
-                    <img src="img/service3.png" alt="Planejamento">
-                    <h3>Planejamento</h3>
-                    <p>Desenvolvimento de planos personalizados.</p>
-                </div>
-            </div>
-        </section>
+    <section id="onde-encontrar" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Onde me encontrar</h2>
+          <p>Atendimento em <strong>Água Fria de Goiás</strong> e região. Calcule a distância até você e veja o tempo estimado.</p>
+          <form id="form-distancia" class="form">
+            <label for="endereco">Seu endereço</label>
+            <input id="endereco" name="endereco" type="text" inputmode="text" placeholder="Rua, número, bairro, cidade" required />
+            <button class="btn" type="submit">Calcular distância</button>
+            <p id="resultado" class="muted" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="map-wrap card card--glass">
+          <div id="mapa" class="map" aria-label="Mapa com localização"></div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Onde Me Encontrar -->
-        <section id="contato">
-            <h2>Onde Me Encontrar</h2>
-            <p><strong>Endereço:</strong> Água Fria de Goiás - Brasil</p>
-            <div id="mapa" style="width:100%; height:300px; border:1px solid #ccc;"></div>
-            <form id="calc-form" style="margin-top: 20px;">
-                <label for="endereco">Digite seu endereço para calcular a distância:</label>
-                <input type="text" id="endereco" placeholder="Ex: Brasília, DF" required>
-                <button type="button" onclick="calcularDistancia()">Calcular</button>
-            </form>
-            <div id="resultado" style="margin-top: 10px; font-weight: bold;"></div>
-        </section>
+    <section id="faq" class="section section--alt">
+      <div class="container">
+        <h2>Atendimento rápido</h2>
+        <div class="chat">
+          <div id="chat-history" class="chat__history" aria-live="polite"></div>
+          <div class="chat__options">
+            <button type="button" data-opt="1" class="btn btn--sm">Quais serviços vocês oferecem?</button>
+            <button type="button" data-opt="2" class="btn btn--sm">Como agendar?</button>
+            <button type="button" data-opt="3" class="btn btn--sm">Horários de atendimento</button>
+            <button type="button" data-opt="4" class="btn btn--sm">Atendem fora da cidade?</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- FAQ com Clara -->
-        <section id="faq-chat" class="faq-chat">
-            <h2>Perguntas Frequentes</h2>
-            <div class="chat-container">
-                <div class="chat-message clara">
-                    <img src="img/clara-avatar.png" alt="Clara">
-                    <div class="message">Olá! Eu sou o Rick, posso te ajudar? Escolha uma pergunta abaixo:</div>
-                </div>
-                <div class="chat-options">
-                    <button onclick="responder(1)">Quais serviços vocês oferecem?</button>
-                    <button onclick="responder(2)">Como agendo uma consulta?</button>
-                    <button onclick="responder(3)">Qual o horário de atendimento?</button>
-                    <button onclick="responder(4)">Vocês atendem fora da cidade?</button>
-                </div>
-                <div id="chat-history"></div>
-            </div>
-        </section>
-    </main>
+    <section id="contato" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Fale comigo</h2>
+          <p>Prefere WhatsApp? Clique no botão ao lado.</p>
+          <ul class="muted">
+            <li><strong>E-mail:</strong> gramaeques_1@hotmail.com/li>
+            <li><strong>Telefone:</strong> (62) 9 9812-3117</li>
+          </ul>
+        </div>
+        <div class="card card--glass center">
+          <a class="btn btn--whatsapp" href="https://wa.me/5562998123117" target="_blank" rel="noopener">Abrir WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; <span id="ano"></span> Conexão Social</p>
-    </footer>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <small>&copy; <span id="ano"></span> Conexão Social</small>
+      <a href="#inicio" class="to-top" aria-label="Voltar ao topo">↑</a>
+    </div>
+  
+  <a class="fab-whatsapp" href="https://wa.me/5562998123117" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">✆</a>
+  <div class="sticky-cta" role="region" aria-label="Ações rápidas">
+    <a class="btn btn--wh" href="https://wa.me/5562998123117" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn--ghost" href="#contato">Agendar</a>
+  </div>
+</footer>
 
-    <script src="script.js"></script>
-    <script src="main.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
+  <script src="script.js" defer></script>
+  <script src="main.js" defer></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

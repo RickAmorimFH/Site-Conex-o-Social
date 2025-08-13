@@ -1,1 +1,1 @@
-alert("Site em desenvolvimento. Sujeito a bugs e alterações sem aviso prévio.")
+console.log("Site em desenvolvimento. Sujeito a bugs e alterações sem aviso prévio.");
