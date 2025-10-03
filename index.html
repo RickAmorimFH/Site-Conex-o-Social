@@ -12,6 +12,52 @@
   <link rel="preload" href="img/banner.jpg" as="image" imagesrcset="img/banner.jpg 1200w" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/service1.png" />
+
+<!-- Popup 46: estilos de acessibilidade e layout -->
+<style>
+  .popup46-overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.45);
+    opacity:0; pointer-events:none; transition:opacity .25s ease;
+    z-index:9998;
+  }
+  .popup46-overlay.active{ opacity:1; pointer-events:auto; }
+  .popup46{
+    position:fixed; left:50%; top:50%; transform:translate(-50%,-55%);
+    width:min(560px,92vw); background:#ffffff; color:#0b1220;
+    border-radius:18px; box-shadow:0 20px 60px rgba(0,0,0,.25);
+    padding:22px 18px 16px; line-height:1.55;
+    opacity:0; scale:.98; transition:opacity .25s ease, transform .25s ease, scale .25s ease;
+    z-index:9999;
+  }
+  .popup46.active{ opacity:1; transform:translate(-50%,-50%); scale:1; }
+  .popup46 h2{ margin:0 0 10px; font-size:1.4rem; }
+  .popup46 p{ margin:0 0 14px; }
+  .popup46 button, .popup46 label{
+    font:inherit;
+  }
+  .popup46-ok{
+    display:inline-block; border:0; padding:10px 16px; border-radius:12px;
+    background:#2563eb; color:#fff; cursor:pointer;
+  }
+  .popup46-close{
+    position:absolute; right:8px; top:6px; width:36px; height:36px;
+    border:0; background:transparent; font-size:22px; cursor:pointer;
+  }
+  .popup46-dontshow{ display:flex; gap:8px; align-items:center; margin:6px 0 0; }
+  /* Botão voltar ao topo (melhoria geral) */
+  #popup46-backToTop{
+    position:fixed; right:18px; bottom:18px; width:44px; height:44px;
+    border:0; border-radius:999px; background:#111827; color:#fff;
+    display:none; align-items:center; justify-content:center; cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,.2); z-index:9990;
+  }
+  #popup46-backToTop.show{ display:flex; }
+  @media (prefers-reduced-motion: reduce){
+    .popup46, .popup46-overlay{ transition:none !important; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+
 </head>
 <body>
   <header class="header" role="banner">
@@ -147,5 +193,99 @@
   <script
     src="https://maps.googleapis.com/maps/api/js?keyAIzaSyAEFwvqWmUJM3JXx5EKvMdhSnp3Uum8ouo&callback=initMap"
     async defer></script>
+
+<!-- Popup 46: conteúdo do modal -->
+<div id="parabens-overlay" class="popup46-overlay" aria-hidden="true"></div>
+<div id="parabens-modal" class="popup46" role="dialog" aria-modal="true" aria-labelledby="popup46-title" aria-describedby="popup46-desc" hidden>
+  <button class="popup46-close" aria-label="Fechar janela">×</button>
+  <h2 id="popup46-title">Porque ela é minha mamãe.</h2>
+<div id="popup46-desc" style="max-height:60vh; overflow:auto; padding-right:6px;">
+  <p>Porque me ensinou a falar com Deus antes de falar do problema.</p>
+  <p>Porque acorda cedo, sorri cansada e mesmo assim encontra tempo pra brigar com todos aqui.</p>
+  <p>Porque a oração dela me guarda quando eu nem percebo.</p>
+  <p>Porque, como Assistente Social, ela cuida de muita gente — e ainda assim me faz sentir único.</p>
+  <p>Porque me corrigiu com amor, me incentivou com fé e sonhou os meus sonhos comigo.</p>
+  <p>Porque nas lutas foi escudo, nas vitórias foi aplauso, e nos dias comuns foi presença.</p>
+  <p>Porque tem mãos que trabalham, joelhos que oram e um coração que ama sem medida.</p>
+  <p>Porque ela me mostrou que servir também é vencer e que caráter vale mais que qualquer medalha.</p>
+  <p>Hoje, nos seus <strong>46 anos</strong>, eu celebro a mulher incrível que você é: mãe, exemplo e bênção.</p>
+  <p><strong>Feliz aniversário!</strong> Que Deus renove suas forças e multiplique sua alegria.</p>
+  <p><em>Com amor, Rick, Papai e Bibi</em></p>
+</div>
+  <label class="popup46-dontshow">
+    <input type="checkbox" id="popup46-nomore"> Não mostrar novamente
+  </label>
+  <div style="margin-top:12px">
+    <button class="popup46-ok">Obrigado 💙</button>
+  </div>
+</div>
+
+<!-- Melhoria geral: botão "voltar ao topo" -->
+<button id="popup46-backToTop" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+<script>
+(function(){
+  var KEY = "popup46_nomore_v1";
+  var modal = document.getElementById("parabens-modal");
+  var overlay = document.getElementById("parabens-overlay");
+  var closeBtn = modal ? modal.querySelector(".popup46-close") : null;
+  var okBtn = modal ? modal.querySelector(".popup46-ok") : null;
+  var noMore = document.getElementById("popup46-nomore");
+  var backTop = document.getElementById("popup46-backToTop");
+  var previouslyFocused;
+
+  function show(){
+    if(!modal || !overlay) return;
+    modal.removeAttribute("hidden");
+    overlay.classList.add("active");
+    modal.classList.add("active");
+    previouslyFocused = document.activeElement;
+    modal.setAttribute("tabindex","-1");
+    modal.focus({preventScroll:true});
+    modal.addEventListener("keydown", onKeydown);
+    overlay.addEventListener("click", hide);
+    if(closeBtn) closeBtn.addEventListener("click", hide);
+    if(okBtn) okBtn.addEventListener("click", hide);
+  }
+  function hide(){
+    if(!modal || !overlay) return;
+    overlay.classList.remove("active");
+    modal.classList.remove("active");
+    setTimeout(function(){ modal.setAttribute("hidden",""); }, 230);
+    modal.removeEventListener("keydown", onKeydown);
+    overlay.removeEventListener("click", hide);
+    if(closeBtn) closeBtn.removeEventListener("click", hide);
+    if(okBtn) okBtn.removeEventListener("click", hide);
+    if(noMore && noMore.checked){
+      try{ localStorage.setItem(KEY, "1"); }catch(e){}
+    }
+    if(previouslyFocused && previouslyFocused.focus) previouslyFocused.focus();
+  }
+  function onKeydown(e){
+    if(e.key === "Escape") hide();
+  }
+
+  // Mostrar ao carregar, se permitido
+  document.addEventListener("DOMContentLoaded", function(){
+    var shouldSkip = false;
+    try{ shouldSkip = localStorage.getItem(KEY) === "1"; }catch(e){}
+    if(!shouldSkip) show();
+  });
+
+  // Voltar ao topo (melhoria)
+  window.addEventListener("scroll", function(){
+    if(!backTop) return;
+    if(window.scrollY > 400){ backTop.classList.add("show"); }
+    else { backTop.classList.remove("show"); }
+  });
+  if(backTop){
+    backTop.addEventListener("click", function(){
+      try{ document.documentElement.scrollTo({top:0, behavior:"smooth"}); }
+      catch(e){ window.scrollTo(0,0); }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
